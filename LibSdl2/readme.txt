@@ -1,4 +1,3 @@
-@duykhanhxx03
 VC++Directories/Include Directories:
 $(SolutionDir)LibSdl2\SDL2_ttf-2.0.14\include
 $(SolutionDir)LibSdl2\SDL2_mixer-2.0.2\include
