@@ -48,7 +48,7 @@ bool init() {
             cout << "Warning: Linear texture filtering not enabled!";
         }
 
-        gWindow = SDL_CreateWindow("Bop Bop Run", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        gWindow = SDL_CreateWindow("Otter Run", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
         if (gWindow == NULL) {
             cout << "Failed to create window! " << SDL_GetError();
             success = false;
@@ -113,7 +113,7 @@ bool loadMedia() {
     LOSE_MENU.loadMedia(success,gRenderer);
     INTRODUCE_MENU.loadMedia(success,gRenderer);
     //Background
-    BACKGROUND.loadMedia(success, gRenderer);
+    BACKGROUND.loadMedia(success, gRenderer);   
     //Load random list
     loadRandomList(success, gRenderer, randomListObstacles, randomListCoin, randomListGems);
     return success;
@@ -129,50 +129,6 @@ void close() {
     ofstream savedScoreInfo("score/score.txt", ios::out);
     savedScoreInfo << SCORE.getHighScore();
     savedScoreInfo.close();
-
-    //double savedVolumeMusic = gSound.getVolumeMusic() * (THRESHOLD_CONTROLER_RIGHT - THRESHOLD_CONTROLER_LEFT - 36) * (double(1) / 128) + THRESHOLD_CONTROLER_LEFT;
-    //double savedVolumeChunk = gSound.getVolumeChunk() * (THRESHOLD_CONTROLER_RIGHT - THRESHOLD_CONTROLER_LEFT - 36) * (double(1) / 128) + THRESHOLD_CONTROLER_LEFT;
-
-    //SDL_RWops* fileVolumeMusic = SDL_RWFromFile("sound/volumemusic.bin", "r+b");
-    //if (fileVolumeMusic != NULL)
-    //{
-    //    //Save data
-    //    SDL_RWwrite(fileVolumeMusic, &savedVolumeMusic, sizeof(double), 1);
-    //    //Close file handler
-    //    SDL_RWclose(fileVolumeMusic);
-    //}
-    //else
-    //{
-    //    cout << "Error: Unable to save file! %s\n" << SDL_GetError();
-    //}
-
-    //SDL_RWops* fileVolumeChunk = SDL_RWFromFile("sound/volumechunk.bin", "r+b");
-    //if (fileVolumeChunk != NULL)
-    //{
-    //    //Save data
-    //    SDL_RWwrite(fileVolumeChunk, &savedVolumeChunk, sizeof(double), 1);
-    //    //Close file handler
-    //    SDL_RWclose(fileVolumeChunk);
-    //}
-    //else
-    //{
-    //    cout << "Error: Unable to save file! %s\n" << SDL_GetError();
-    //}
-
-    ////Open data for writing
-    //int savedScore = SCORE.getHighScore();
-    //SDL_RWops* fileScore = SDL_RWFromFile("score/score.bin", "w+b");
-    //if (fileScore != NULL)
-    //{
-    //    //Save data
-    //    SDL_RWwrite(fileScore, &savedScore, sizeof(int), 1);
-    //    //Close file handler
-    //    SDL_RWclose(fileScore);
-    //}
-    //else
-    //{
-    //    cout << "Error: Unable to save file! %s\n" << SDL_GetError();
-    //}
 
     //giải phóng 
     TTF_CloseFont(Font);

@@ -63,5 +63,4 @@ void gStartMenu::loadMedia(bool& success, SDL_Renderer* gRenderer, TTF_Font* Fon
         success = false;
     }
     GameTitleText.loadFromRenderedText(gRenderer, "Otter", textColor, FontBigSize);
-    //CreditTexture.loadFromRenderedText(gRenderer, "", textColor, Font);
 }
